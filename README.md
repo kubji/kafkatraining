@@ -1,2 +1,0 @@
-# kafkatraining
-Kafka Training Examples
