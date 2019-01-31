@@ -1,3 +1,3 @@
 # kafkatraining
 Kafka Training Examples
-kubji.com
+https://kubji.com/
