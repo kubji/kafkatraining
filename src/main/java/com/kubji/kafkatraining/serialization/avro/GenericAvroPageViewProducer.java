@@ -1,3 +1,4 @@
+/*
 package com.kubji.kafkatraining.serialization.avro;
 
 import io.confluent.kafka.schemaregistry.client.rest.RestService;
@@ -15,9 +16,11 @@ import java.util.Date;
 import java.util.Properties;
 import java.util.Random;
 
+*/
 /**
  * Created by kafka on 29/1/19.
- */
+ *//*
+
 public class GenericAvroPageViewProducer implements Runnable {
     private final KafkaProducer<String, GenericRecord> producer;
     private final String topic;
@@ -102,8 +105,8 @@ public class GenericAvroPageViewProducer implements Runnable {
                 pageView.put("ip", ip);
                 long runtime = new Date().getTime();
                 pageView.put("time", runtime);
-                /*String referrer = this.referrer[rnd.nextInt(this.referrer.length)];
-                pageView.put("referrer", referrer);*/
+                String referrer = this.referrer[rnd.nextInt(this.referrer.length)];
+                pageView.put("referrer", referrer);
 
                 producer.send(new ProducerRecord<String, GenericRecord>(topic, pageView), new Callback() {
                     public void onCompletion(RecordMetadata metadata, Exception e) {
@@ -139,3 +142,4 @@ public class GenericAvroPageViewProducer implements Runnable {
         t1.start();
     }
 }
+*/
