@@ -27,12 +27,14 @@ public class VehiclePartitioner implements Partitioner {
             //MUMBAI ---> vehicle-1
             //KOLKATA ---> vehicle-2
             //CHENNAI ---> vehicle-3
-            return cityToPartitionMap.get(cityName);
+            int majorPartionNo = cityToPartitionMap.get(cityName);
+            return majorPartionNo;
         }else {
             //If no city is mapped to particular partition distribute among remaining partitions
             //Messages from minor city will be distributed among vehicle-4 & vehicle-5
             int mapSize = cityToPartitionMap.size();
-            return  cityName.hashCode()% (numPartitions-mapSize) + mapSize ;
+            int partiionNo =  ((cityName.hashCode() & 0xfffffff) % (numPartitions-mapSize)) + mapSize ;
+            return  partiionNo;
         }
     }
 
