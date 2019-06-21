@@ -47,13 +47,13 @@ public class VehiclePartitioner implements Partitioner {
     public void configure(Map<String, ?> configs) {
 
         //This function is called during initialization. HashMap is created mapping City to Parition number.
-        System.out.println("Inside CityPartitioner.configure " + configs);
+        //System.out.println("Inside CityPartitioner.configure " + configs);
         cityToPartitionMap = new HashMap<String, Integer>();
         for(Map.Entry<String,?> entry: configs.entrySet()){
             if(entry.getKey().startsWith("partitions.")){
                 String keyName = entry.getKey();
                 String value = (String)entry.getValue();
-                System.out.println( keyName.substring(11));
+                //System.out.println( keyName.substring(11));
                 int paritionId = Integer.parseInt(keyName.substring(11));
                 cityToPartitionMap.put(value,paritionId);
             }
